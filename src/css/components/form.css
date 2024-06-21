@@ -1,0 +1,22 @@
+.form {
+
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    padding: 10px;
+    border-radius: 10px;
+
+
+    & > section:first-of-type {
+        display: flex;
+        flex-direction: column;
+    }
+
+    & > section:last-of-type {
+        display: flex;
+        justify-content: space-between;
+    }
+
+
+
+}

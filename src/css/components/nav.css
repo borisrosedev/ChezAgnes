@@ -1,0 +1,7 @@
+.nav {
+    a {
+        margin-inline: 10px;
+        opacity: 0;
+        animation:  show-right 1000ms ease-in-out 1000ms forwards;
+    }
+}
