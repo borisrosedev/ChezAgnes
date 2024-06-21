@@ -8,8 +8,8 @@ class NotificationService {
         this.notifElement = document.getElementById('notification');
     }
 
-    setMessage(val){
-        this.notifElement.innerHTML = paragraph("notifcation--animation", val)  
+    setMessage(val, type){
+        this.notifElement.innerHTML = paragraph(`notification-animation notification-animation--${type}`, val)  
     }
 
 

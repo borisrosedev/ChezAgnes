@@ -1,5 +1,6 @@
+import AuthService from "../services/AuthService.js";
 import NotificationService from "../services/NotificationService.js";
-import UsersService from "../services/UsersService.js";
+
 
 class LoginContainer {
 
@@ -26,19 +27,17 @@ class LoginContainer {
         console.log(emailValue, passwordValue)
 
         if(!passwordValue || !emailValue){
-            new NotificationService().setMessage("Email ou Mot de passe oublié")
+            new NotificationService().setMessage("Email ou Mot de passe oublié", "negative")
             return
         }
 
-        const allUsers = await UsersService.getUsers()
         
-        const user = allUsers.find((us) => us.email == emailValue)
-        if(user){
-            if(user.password == passwordValue){
-                new NotificationService().setMessage("Bienvenue ! Session en cours de chargement")
-            } else {
-                new NotificationService().setMessage("Informations invalides")
-            }
+        const isLoggedIn = await AuthService.login({ email: emailValue, password: passwordValue})
+
+        if(isLoggedIn){
+            new NotificationService().setMessage("<span>Connexion réussie 🎉\n</span><span>Bienvenue " + emailValue.split("@")[0].charAt(0).toUpperCase() + emailValue.split("@")[0].slice(1).toLowerCase() + "</span>", "positive")
+        } else {
+            new NotificationService().setMessage("❌ Informations incorrectes", "negative")
         }
 
 
