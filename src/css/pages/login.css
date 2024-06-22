@@ -1,14 +1,12 @@
 .login__main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../../../assets/cafe.jpg");
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: url('../../../assets/cafe.jpg');
-
-    
-    & > section {
-        overflow: hidden;
-        width: 50%;
-        background: rgba(0, 0, 0, 0.6);
-    }
+  & > section {
+    overflow: hidden;
+    width: 50%;
+    background: rgba(0, 0, 0, 0.6);
+  }
 }

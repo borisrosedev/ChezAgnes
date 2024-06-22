@@ -1,14 +1,10 @@
 [
-
-    {
-        "email":"agnes@gmail.com",
-        "password":"mathematiques"
-    },
-    {
-        "email":"cedric@gmail.com",
-        "password":"l'animal"
-    }
-
-
-
+  {
+    "email": "agnes@gmail.com",
+    "password": "mathematiques"
+  },
+  {
+    "email": "cedric@gmail.com",
+    "password": "l'animal"
+  }
 ]
